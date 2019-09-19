@@ -7,6 +7,6 @@ let e = new Echo({
 });
 
 e.channel('laravel_realtime_database_chan-demo').listen('TestEvent', function(e) {
-    console.log('TestEvent', e.param);
+    console.log('TestEvent', e);
     document.getElementById('realtime').innerHTML = e.param;
 });

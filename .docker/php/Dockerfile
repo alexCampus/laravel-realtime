@@ -1,7 +1,7 @@
 FROM php:7.3-fpm
 
 # CONF PHP
-RUN apt-get update && apt-get install -y zlib1g-dev libicu-dev g++ libmcrypt-dev locales libmagickwand-dev libcurl4-gnutls-dev
+RUN apt-get update && apt-get install -y zlib1g-dev libicu-dev g++ libmcrypt-dev locales libmagickwand-dev libcurl4-gnutls-dev zip unzip
 RUN apt-get -y install libcurl4-openssl-dev pkg-config libssl-dev
 RUN docker-php-ext-configure intl
 RUN docker-php-ext-install intl
@@ -22,6 +22,9 @@ RUN apt-get update \
     && apt-get -y install git && apt-get install nodejs\
 && apt-get clean; rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
 
+#Install Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
 # LOCALES
 RUN sed -i 's=# \(en_US.UTF-8\)=\1=g' /etc/locale.gen
 RUN sed -i 's=# \(fr_FR.UTF-8\)=\1=g' /etc/locale.gen
@@ -29,8 +32,11 @@ RUN locale-gen
 ADD /30-custom.ini /usr/local/etc/php/conf.d/app.ini
 
 RUN mkdir -p /home/wwwroot/test
+RUN mkdir -p /var/www/.composer
+RUN mkdir -p /var/www/.npm
 RUN chown -R www-data.www-data /home/wwwroot/test
-
+RUN chown -R  www-data.www-data /var/www/.composer
+RUN chown -R  www-data.www-data /var/www/.npm
 USER www-data
 
 
