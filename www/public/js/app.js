@@ -20504,7 +20504,7 @@ var e = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   host: window.location.hostname + ':6001'
 });
 e.channel('laravel_realtime_database_chan-demo').listen('TestEvent', function (e) {
-  console.log('TestEvent', e.param);
+  console.log('TestEvent', e);
   document.getElementById('realtime').innerHTML = e.param;
 });
 

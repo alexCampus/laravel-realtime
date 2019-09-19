@@ -34,6 +34,8 @@ use :
 connect to http://localhost:8000/testEvent
 and watch http://localhost:8000/
 
+**Play with and Enjoy** :blush:
+
  # For More
 
  - mongo-express running at http://localhost:8081/

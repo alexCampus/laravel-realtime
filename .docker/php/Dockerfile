@@ -34,9 +34,11 @@ ADD /30-custom.ini /usr/local/etc/php/conf.d/app.ini
 RUN mkdir -p /home/wwwroot/test
 RUN mkdir -p /var/www/.composer
 RUN mkdir -p /var/www/.npm
+RUN mkdir -p /var/www/.config
 RUN chown -R www-data.www-data /home/wwwroot/test
 RUN chown -R  www-data.www-data /var/www/.composer
 RUN chown -R  www-data.www-data /var/www/.npm
+RUN chown -R  www-data.www-data /var/www/.config
 USER www-data
 
 
