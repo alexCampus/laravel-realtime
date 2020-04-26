@@ -18,16 +18,16 @@ services:
             - test_redis
 
 
-    mongo:
-        image: mongo
-        container_name: laravel_realtime_mongo
-        restart: always
-        environment:
-            MONGO_INITDB_ROOT_USERNAME: root
-            MONGO_INITDB_ROOT_PASSWORD: example
-            MONGO_INITDB_DATABASE: test
-        volumes:
-            - .docker/mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+#    mongo:
+#        image: mongo
+#        container_name: laravel_realtime_mongo
+#        restart: always
+#        environment:
+#            MONGO_INITDB_ROOT_USERNAME: root
+#            MONGO_INITDB_ROOT_PASSWORD: example
+#            MONGO_INITDB_DATABASE: test
+#        volumes:
+#            - .docker/mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
 
     apache:
         container_name: laravel_realtime_apache
@@ -39,15 +39,15 @@ services:
         depends_on:
             - php
 
-    mongo-express:
-        image: mongo-express
-        container_name: laravel_realtime_mongo_express
-        restart: always
-        ports:
-            - 8081:8081
-        environment:
-            ME_CONFIG_MONGODB_ADMINUSERNAME: root
-            ME_CONFIG_MONGODB_ADMINPASSWORD: example
+#    mongo-express:
+#        image: mongo-express
+#        container_name: laravel_realtime_mongo_express
+#        restart: always
+#        ports:
+#            - 8081:8081
+#        environment:
+#            ME_CONFIG_MONGODB_ADMINUSERNAME: root
+#            ME_CONFIG_MONGODB_ADMINPASSWORD: example
 
     test_redis:
         container_name: laravel_realtime_redis

@@ -9,7 +9,7 @@ RUN pecl install mongodb && docker-php-ext-enable mongodb
 
 ## NODE JS
 RUN apt-get install -y curl \
-  && curl -sL https://deb.nodesource.com/setup_9.x | bash - \
+  && curl -sL https://deb.nodesource.com/setup_12.x | bash - \
   && apt-get install -y nodejs \
   && curl -L https://www.npmjs.com/install.sh | sh
 
