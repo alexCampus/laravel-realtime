@@ -17,7 +17,26 @@ services:
         links:
             - test_redis
 
+    db:
+        image: mysql:8.0
+        command: ['--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci','--default-authentication-plugin=mysql_native_password']
+        container_name: laravel_realtime_mysql
+        restart: always
+        ports:
+            - '6603:3306'
+        environment:
+            MYSQL_ROOT_PASSWORD: helloworld
 
+    app:
+        depends_on:
+            - db
+        image: phpmyadmin/phpmyadmin
+        container_name: phpmyadmin
+        restart: always
+        ports:
+            - '8080:80'
+        environment:
+            PMA_HOST: db
 #    mongo:
 #        image: mongo
 #        container_name: laravel_realtime_mongo

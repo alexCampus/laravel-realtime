@@ -1,4 +1,4 @@
-FROM php:7.3-fpm
+FROM php:7.4-fpm
 
 # CONF PHP
 RUN apt-get update && apt-get install -y zlib1g-dev libicu-dev g++ libmcrypt-dev locales libmagickwand-dev libcurl4-gnutls-dev zip unzip

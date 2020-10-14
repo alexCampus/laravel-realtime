@@ -2,10 +2,11 @@
 
 use :
 
- - Laravel 6.0
+ - Laravel 8.0
  - docker 
-	 - php 7.3
+	 - php 7.4
 	 - Apache debian:jessie
+	 - MySql 8.0 & PhpMyAdmin
 	 - MongoDB // Mongo-Express
 	 - Node 10 
 		 - laravel-echo-server
@@ -49,7 +50,7 @@ and watch http://localhost:8000/
 # Documentation
 
  - https://www.docker.com/
- - https://laravel.com/docs/6.x
+ - https://laravel.com/docs/8.x
  - https://github.com/tlaverdure/laravel-echo-server
  - https://redis.io/
  - https://www.mongodb.com/fr
