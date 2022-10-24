@@ -1,8 +1,8 @@
-FROM debian:jessie
+FROM debian:bullseye
 
-RUN echo 'deb http://ftp.fr.debian.org/debian/ jessie non-free' >> /etc/apt/sources.list
-RUN echo 'deb-src http://ftp.fr.debian.org/debian/ jessie non-free' >> /etc/apt/sources.list
-RUN apt-get update; apt-get install -y apache2 libapache2-mod-fastcgi 
+RUN echo 'deb http://ftp.fr.debian.org/debian/ bullseye non-free' >> /etc/apt/sources.list
+RUN echo 'deb-src http://ftp.fr.debian.org/debian/ bullseye non-free' >> /etc/apt/sources.list
+RUN apt-get update; apt-get install -y apache2
 
 
 

@@ -1,4 +1,4 @@
-FROM php:7.4-fpm
+FROM php:8.1-fpm
 
 # CONF PHP
 RUN apt-get update && apt-get install -y zlib1g-dev libicu-dev g++ libmcrypt-dev locales libmagickwand-dev libcurl4-gnutls-dev zip unzip
@@ -9,7 +9,7 @@ RUN pecl install mongodb && docker-php-ext-enable mongodb
 
 ## NODE JS
 RUN apt-get install -y curl \
-  && curl -sL https://deb.nodesource.com/setup_12.x | bash - \
+  && curl -sL https://deb.nodesource.com/setup_16.x | bash - \
   && apt-get install -y nodejs \
   && curl -L https://www.npmjs.com/install.sh | sh
 

@@ -62,6 +62,9 @@
             margin-bottom: 30px;
         }
     </style>
+        
+        <!-- Scripts and CSS import -->
+        @vite
 </head>
 <body>
 <div class="flex-center position-ref full-height">
@@ -81,7 +84,7 @@
 
     <div class="content">
         <div class="title m-b-md">
-            Laravel
+            Laravel {{ app()->version() }}
             <div id="realtime"></div>
         </div>
 
@@ -99,5 +102,5 @@
 </div>
 </body>
 <script src="//{{ Request::getHost() }}:6001/socket.io/socket.io.js"></script>
-<script src="{{ asset('js/app.js') }}"></script>
+{{--<script src="{{ asset('js/app.js') }}"></script>--}}
 </html>
